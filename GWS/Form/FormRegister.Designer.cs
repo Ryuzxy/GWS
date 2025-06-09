@@ -22,6 +22,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDaftar));
             txtUsername = new TextBox();
             txtPassword = new TextBox();
             txtKonfirmasiPassword = new TextBox();
@@ -33,22 +34,26 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(30, 40);
+            txtUsername.BackColor = SystemColors.InactiveCaption;
+            txtUsername.Location = new Point(30, 31);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(200, 31);
             txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(30, 90);
+            txtPassword.BackColor = SystemColors.InactiveCaption;
+            txtPassword.Location = new Point(30, 99);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(200, 31);
             txtPassword.TabIndex = 3;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // txtKonfirmasiPassword
             // 
-            txtKonfirmasiPassword.Location = new Point(30, 140);
+            txtKonfirmasiPassword.BackColor = SystemColors.InactiveCaption;
+            txtKonfirmasiPassword.Location = new Point(30, 170);
             txtKonfirmasiPassword.Name = "txtKonfirmasiPassword";
             txtKonfirmasiPassword.PasswordChar = '*';
             txtKonfirmasiPassword.Size = new Size(200, 31);
@@ -56,41 +61,50 @@
             // 
             // btnDaftar
             // 
-            btnDaftar.Location = new Point(30, 180);
+            btnDaftar.BackColor = Color.Transparent;
+            btnDaftar.BackgroundImage = (Image)resources.GetObject("btnDaftar.BackgroundImage");
+            btnDaftar.Location = new Point(30, 228);
             btnDaftar.Name = "btnDaftar";
-            btnDaftar.Size = new Size(200, 30);
+            btnDaftar.Size = new Size(200, 34);
             btnDaftar.TabIndex = 6;
             btnDaftar.Text = "Daftar";
-            btnDaftar.UseVisualStyleBackColor = true;
+            btnDaftar.UseVisualStyleBackColor = false;
             btnDaftar.Click += btnDaftar_Click;
             // 
             // lblUsername
             // 
-            lblUsername.Location = new Point(30, 20);
+            lblUsername.BackColor = Color.Transparent;
+            lblUsername.Location = new Point(30, 0);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(200, 15);
+            lblUsername.Size = new Size(200, 28);
             lblUsername.TabIndex = 0;
             lblUsername.Text = "Username";
             // 
             // lblPassword
             // 
-            lblPassword.Location = new Point(30, 70);
+            lblPassword.BackColor = Color.Transparent;
+            lblPassword.Location = new Point(30, 65);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(200, 15);
+            lblPassword.Size = new Size(200, 31);
             lblPassword.TabIndex = 2;
             lblPassword.Text = "Password";
+            lblPassword.Click += lblPassword_Click;
             // 
             // lblKonfirmasi
             // 
-            lblKonfirmasi.Location = new Point(30, 120);
+            lblKonfirmasi.BackColor = Color.Transparent;
+            lblKonfirmasi.Location = new Point(30, 133);
             lblKonfirmasi.Name = "lblKonfirmasi";
-            lblKonfirmasi.Size = new Size(200, 15);
+            lblKonfirmasi.Size = new Size(200, 34);
             lblKonfirmasi.TabIndex = 4;
             lblKonfirmasi.Text = "Konfirmasi Password";
+            lblKonfirmasi.Click += lblKonfirmasi_Click;
             // 
             // FormDaftar
             // 
-            ClientSize = new Size(274, 226);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(471, 317);
             Controls.Add(lblUsername);
             Controls.Add(txtUsername);
             Controls.Add(lblPassword);
@@ -100,6 +114,7 @@
             Controls.Add(btnDaftar);
             Name = "FormDaftar";
             Text = "Daftar Akun Baru";
+            Load += FormDaftar_Load;
             ResumeLayout(false);
             PerformLayout();
         }

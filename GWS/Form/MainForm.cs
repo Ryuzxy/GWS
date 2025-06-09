@@ -33,5 +33,15 @@ namespace MainForms
             this.Close();
             Application.Restart();
         }
+
+        private void labelWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormUtama_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

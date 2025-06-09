@@ -5,8 +5,10 @@
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabJadwal;
+        private System.Windows.Forms.TabPage tabDokter;
         private System.Windows.Forms.TabPage tabBot;
         private System.Windows.Forms.TabPage tabPeriksa;
+        private System.Windows.Forms.DataGridView dgvDokter;
         private System.Windows.Forms.DataGridView dgvJadwal;
         private System.Windows.Forms.TextBox txtChat;
         private System.Windows.Forms.TextBox txtInput;
@@ -16,173 +18,255 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colHari;
         private System.Windows.Forms.DataGridViewTextBoxColumn colJam;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDokter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSpesialis;
 
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabJadwal = new System.Windows.Forms.TabPage();
-            this.dgvJadwal = new System.Windows.Forms.DataGridView();
-            this.colHari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDokter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabBot = new System.Windows.Forms.TabPage();
-            this.txtChat = new System.Windows.Forms.TextBox();
-            this.txtInput = new System.Windows.Forms.TextBox();
-            this.btnKirim = new System.Windows.Forms.Button();
-            this.tabPeriksa = new System.Windows.Forms.TabPage();
-            this.listPeriksa = new System.Windows.Forms.ListBox();
-            this.btnDaftarPeriksa = new System.Windows.Forms.Button();
-            this.tabControl.SuspendLayout();
-            this.tabJadwal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJadwal)).BeginInit();
-            this.tabBot.SuspendLayout();
-            this.tabPeriksa.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPasien));
+            tabControl = new TabControl();
+            tabJadwal = new TabPage();
+            dgvJadwal = new DataGridView();
+            colHari = new DataGridViewTextBoxColumn();
+            colJam = new DataGridViewTextBoxColumn();
+            colDokter = new DataGridViewTextBoxColumn();
+            tabDokter = new TabPage();
+            dgvDokter = new DataGridView();
+            colId = new DataGridViewTextBoxColumn();
+            colNama = new DataGridViewTextBoxColumn();
+            colSpesialis = new DataGridViewTextBoxColumn();
+            tabBot = new TabPage();
+            txtChat = new TextBox();
+            txtInput = new TextBox();
+            btnKirim = new Button();
+            tabPeriksa = new TabPage();
+            listPeriksa = new ListBox();
+            btnDaftarPeriksa = new Button();
+            tabControl.SuspendLayout();
+            tabJadwal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvJadwal).BeginInit();
+            tabDokter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvDokter).BeginInit();
+            tabBot.SuspendLayout();
+            tabPeriksa.SuspendLayout();
+            SuspendLayout();
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.tabJadwal);
-            this.tabControl.Controls.Add(this.tabBot);
-            this.tabControl.Controls.Add(this.tabPeriksa);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 0);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(600, 400);
-            this.tabControl.TabIndex = 0;
+            tabControl.Controls.Add(tabJadwal);
+            tabControl.Controls.Add(tabDokter);
+            tabControl.Controls.Add(tabBot);
+            tabControl.Controls.Add(tabPeriksa);
+            tabControl.Dock = DockStyle.Fill;
+            tabControl.Location = new Point(0, 0);
+            tabControl.Margin = new Padding(4, 5, 4, 5);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(762, 667);
+            tabControl.TabIndex = 0;
             // 
             // tabJadwal
             // 
-            this.tabJadwal.Controls.Add(this.dgvJadwal);
-            this.tabJadwal.Location = new System.Drawing.Point(4, 24);
-            this.tabJadwal.Name = "tabJadwal";
-            this.tabJadwal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabJadwal.Size = new System.Drawing.Size(592, 372);
-            this.tabJadwal.TabIndex = 0;
-            this.tabJadwal.Text = "Jadwal";
-            this.tabJadwal.UseVisualStyleBackColor = true;
-            // 
+            // tabJadwal
+            tabJadwal.BackgroundImage = null; // Hapus jika background image tidak diperlukan atau hilangkan jika ingin pakai background image
+            tabJadwal.BackgroundImageLayout = ImageLayout.None; // atau sesuai kebutuhan
+                                                                // tabJadwal.ForeColor = Color.Transparent; // Hapus baris ini supaya teks tab terlihat
+            tabJadwal.Controls.Add(dgvJadwal);
+            tabJadwal.Location = new Point(4, 34);
+            tabJadwal.Margin = new Padding(4, 5, 4, 5);
+            tabJadwal.Name = "tabJadwal";
+            tabJadwal.Padding = new Padding(4, 5, 4, 5);
+            tabJadwal.Size = new Size(754, 629);
+            tabJadwal.TabIndex = 0;
+            tabJadwal.Text = "Jadwal";
+            tabJadwal.UseVisualStyleBackColor = true;
+
             // dgvJadwal
-            // 
-            this.dgvJadwal.AllowUserToAddRows = false;
-            this.dgvJadwal.AllowUserToDeleteRows = false;
-            this.dgvJadwal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJadwal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colHari,
-            this.colJam,
-            this.colDokter});
-            this.dgvJadwal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvJadwal.Location = new System.Drawing.Point(3, 3);
-            this.dgvJadwal.Name = "dgvJadwal";
-            this.dgvJadwal.ReadOnly = true;
-            this.dgvJadwal.Size = new System.Drawing.Size(586, 366);
-            this.dgvJadwal.TabIndex = 0;
-            // 
+            dgvJadwal.AllowUserToAddRows = false;
+            dgvJadwal.AllowUserToDeleteRows = false;
+            dgvJadwal.BackgroundColor = SystemColors.ScrollBar;
+            dgvJadwal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvJadwal.Columns.AddRange(new DataGridViewColumn[] { colHari, colJam, colDokter });
+            dgvJadwal.Dock = DockStyle.Fill; // Ini sudah benar agar dgv mengisi tab
+            dgvJadwal.GridColor = Color.Black;
+            // Tidak perlu set Location dan Size manual karena Dock=Fill sudah mengatur
+            dgvJadwal.ReadOnly = true;
+            dgvJadwal.RowHeadersWidth = 62;
+            dgvJadwal.CellContentClick += dgvJadwal_CellContentClick;
+
             // colHari
             // 
-            this.colHari.HeaderText = "Hari";
-            this.colHari.Name = "colHari";
-            this.colHari.ReadOnly = true;
+            colHari.HeaderText = "Hari";
+            colHari.MinimumWidth = 8;
+            colHari.Name = "colHari";
+            colHari.ReadOnly = true;
+            colHari.Width = 150;
             // 
             // colJam
             // 
-            this.colJam.HeaderText = "Jam";
-            this.colJam.Name = "colJam";
-            this.colJam.ReadOnly = true;
+            colJam.HeaderText = "Jam";
+            colJam.MinimumWidth = 8;
+            colJam.Name = "colJam";
+            colJam.ReadOnly = true;
+            colJam.Width = 150;
             // 
             // colDokter
             // 
-            this.colDokter.HeaderText = "Dokter";
-            this.colDokter.Name = "colDokter";
-            this.colDokter.ReadOnly = true;
+            colDokter.HeaderText = "Dokter";
+            colDokter.MinimumWidth = 8;
+            colDokter.Name = "colDokter";
+            colDokter.ReadOnly = true;
+            colDokter.Width = 150;
+            // 
+            // tabDokter
+            // 
+            tabDokter.Controls.Add(dgvDokter);
+            tabDokter.Location = new Point(4, 34);
+            tabDokter.Margin = new Padding(4, 5, 4, 5);
+            tabDokter.Name = "tabDokter";
+            tabDokter.Padding = new Padding(4, 5, 4, 5);
+            tabDokter.Size = new Size(754, 629);
+            tabDokter.TabIndex = 0;
+            tabDokter.Text = "Dokter";
+            tabDokter.UseVisualStyleBackColor = true;
+            // 
+            // dgvDokter
+            // 
+            dgvDokter.AllowUserToAddRows = false;
+            dgvDokter.AllowUserToDeleteRows = false;
+            dgvDokter.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvDokter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDokter.Columns.AddRange(new DataGridViewColumn[] { colId, colNama, colSpesialis });
+            dgvDokter.Dock = DockStyle.Fill;
+            dgvDokter.Location = new Point(4, 5);
+            dgvDokter.Margin = new Padding(4, 5, 4, 5);
+            dgvDokter.Name = "dgvDokter";
+            dgvDokter.ReadOnly = true;
+            dgvDokter.RowHeadersWidth = 62;
+            dgvDokter.Size = new Size(746, 619);
+            dgvDokter.TabIndex = 0;
+            // 
+            // colId
+            // 
+            colId.HeaderText = "Id Dokter";
+            colId.MinimumWidth = 8;
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Width = 150;
+            // 
+            // colNama
+            // 
+            colNama.HeaderText = "Nama Dokter";
+            colNama.MinimumWidth = 8;
+            colNama.Name = "colNama";
+            colNama.ReadOnly = true;
+            colNama.Width = 150;
+            // 
+            // colSpesialis
+            // 
+            colSpesialis.HeaderText = "Spesialis Penyakit";
+            colSpesialis.MinimumWidth = 8;
+            colSpesialis.Name = "colSpesialis";
+            colSpesialis.ReadOnly = true;
+            colSpesialis.Width = 150;
             // 
             // tabBot
             // 
-            this.tabBot.Controls.Add(this.txtChat);
-            this.tabBot.Controls.Add(this.txtInput);
-            this.tabBot.Controls.Add(this.btnKirim);
-            this.tabBot.Location = new System.Drawing.Point(4, 24);
-            this.tabBot.Name = "tabBot";
-            this.tabBot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBot.Size = new System.Drawing.Size(592, 372);
-            this.tabBot.TabIndex = 1;
-            this.tabBot.Text = "Bot Pembantu";
-            this.tabBot.UseVisualStyleBackColor = true;
+            tabBot.Controls.Add(txtChat);
+            tabBot.Controls.Add(txtInput);
+            tabBot.Controls.Add(btnKirim);
+            tabBot.Location = new Point(4, 34);
+            tabBot.Margin = new Padding(4, 5, 4, 5);
+            tabBot.Name = "tabBot";
+            tabBot.Padding = new Padding(4, 5, 4, 5);
+            tabBot.Size = new Size(754, 629);
+            tabBot.TabIndex = 1;
+            tabBot.Text = "Bot Pembantu";
+            tabBot.UseVisualStyleBackColor = true;
             // 
             // txtChat
             // 
-            this.txtChat.Location = new System.Drawing.Point(6, 6);
-            this.txtChat.Multiline = true;
-            this.txtChat.Name = "txtChat";
-            this.txtChat.ReadOnly = true;
-            this.txtChat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtChat.Size = new System.Drawing.Size(580, 280);
-            this.txtChat.TabIndex = 0;
+            txtChat.Location = new Point(9, 10);
+            txtChat.Margin = new Padding(4, 5, 4, 5);
+            txtChat.Multiline = true;
+            txtChat.Name = "txtChat";
+            txtChat.ReadOnly = true;
+            txtChat.ScrollBars = ScrollBars.Vertical;
+            txtChat.Size = new Size(827, 464);
+            txtChat.TabIndex = 0;
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(6, 292);
-            this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(480, 23);
-            this.txtInput.TabIndex = 1;
+            txtInput.Location = new Point(9, 487);
+            txtInput.Margin = new Padding(4, 5, 4, 5);
+            txtInput.Name = "txtInput";
+            txtInput.Size = new Size(684, 31);
+            txtInput.TabIndex = 1;
             // 
             // btnKirim
             // 
-            this.btnKirim.Location = new System.Drawing.Point(492, 291);
-            this.btnKirim.Name = "btnKirim";
-            this.btnKirim.Size = new System.Drawing.Size(94, 25);
-            this.btnKirim.TabIndex = 2;
-            this.btnKirim.Text = "Kirim";
-            this.btnKirim.UseVisualStyleBackColor = true;
-            this.btnKirim.Click += new System.EventHandler(this.btnKirim_Click);
+            btnKirim.Location = new Point(703, 485);
+            btnKirim.Margin = new Padding(4, 5, 4, 5);
+            btnKirim.Name = "btnKirim";
+            btnKirim.Size = new Size(134, 42);
+            btnKirim.TabIndex = 2;
+            btnKirim.Text = "Kirim";
+            btnKirim.UseVisualStyleBackColor = true;
+            btnKirim.Click += btnKirim_Click;
             // 
             // tabPeriksa
             // 
-            this.tabPeriksa.Controls.Add(this.listPeriksa);
-            this.tabPeriksa.Controls.Add(this.btnDaftarPeriksa);
-            this.tabPeriksa.Location = new System.Drawing.Point(4, 24);
-            this.tabPeriksa.Name = "tabPeriksa";
-            this.tabPeriksa.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPeriksa.Size = new System.Drawing.Size(592, 372);
-            this.tabPeriksa.TabIndex = 2;
-            this.tabPeriksa.Text = "Daftar Periksa";
-            this.tabPeriksa.UseVisualStyleBackColor = true;
+            tabPeriksa.Controls.Add(listPeriksa);
+            tabPeriksa.Controls.Add(btnDaftarPeriksa);
+            tabPeriksa.Location = new Point(4, 34);
+            tabPeriksa.Margin = new Padding(4, 5, 4, 5);
+            tabPeriksa.Name = "tabPeriksa";
+            tabPeriksa.Padding = new Padding(4, 5, 4, 5);
+            tabPeriksa.Size = new Size(754, 629);
+            tabPeriksa.TabIndex = 2;
+            tabPeriksa.Text = "Daftar Periksa";
+            tabPeriksa.UseVisualStyleBackColor = true;
             // 
             // listPeriksa
             // 
-            this.listPeriksa.FormattingEnabled = true;
-            this.listPeriksa.ItemHeight = 15;
-            this.listPeriksa.Location = new System.Drawing.Point(6, 6);
-            this.listPeriksa.Name = "listPeriksa";
-            this.listPeriksa.Size = new System.Drawing.Size(580, 319);
-            this.listPeriksa.TabIndex = 0;
+            listPeriksa.FormattingEnabled = true;
+            listPeriksa.Location = new Point(4, 5);
+            listPeriksa.Margin = new Padding(4, 5, 4, 5);
+            listPeriksa.Name = "listPeriksa";
+            listPeriksa.Size = new Size(827, 529);
+            listPeriksa.TabIndex = 0;
             // 
             // btnDaftarPeriksa
             // 
-            this.btnDaftarPeriksa.Location = new System.Drawing.Point(6, 331);
-            this.btnDaftarPeriksa.Name = "btnDaftarPeriksa";
-            this.btnDaftarPeriksa.Size = new System.Drawing.Size(580, 30);
-            this.btnDaftarPeriksa.TabIndex = 1;
-            this.btnDaftarPeriksa.Text = "Daftar Periksa";
-            this.btnDaftarPeriksa.UseVisualStyleBackColor = true;
-            this.btnDaftarPeriksa.Click += new System.EventHandler(this.btnDaftarPeriksa_Click);
+            btnDaftarPeriksa.Location = new Point(9, 552);
+            btnDaftarPeriksa.Margin = new Padding(4, 5, 4, 5);
+            btnDaftarPeriksa.Name = "btnDaftarPeriksa";
+            btnDaftarPeriksa.Size = new Size(829, 50);
+            btnDaftarPeriksa.TabIndex = 1;
+            btnDaftarPeriksa.Text = "Daftar Periksa";
+            btnDaftarPeriksa.UseVisualStyleBackColor = true;
+            btnDaftarPeriksa.Click += btnDaftarPeriksa_Click;
             // 
             // FormPasien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 400);
-            this.Controls.Add(this.tabControl);
-            this.Name = "FormPasien";
-            this.Text = "Form Pasien";
-            this.Load += new System.EventHandler(this.FormPasien_Load);
-            this.tabControl.ResumeLayout(false);
-            this.tabJadwal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJadwal)).EndInit();
-            this.tabBot.ResumeLayout(false);
-            this.tabBot.PerformLayout();
-            this.tabPeriksa.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(762, 667);
+            Controls.Add(tabControl);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "FormPasien";
+            Text = "Form Pasien";
+            Load += FormPasien_Load;
+            tabControl.ResumeLayout(false);
+            tabJadwal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvJadwal).EndInit();
+            tabDokter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvDokter).EndInit();
+            tabBot.ResumeLayout(false);
+            tabBot.PerformLayout();
+            tabPeriksa.ResumeLayout(false);
+            ResumeLayout(false);
         }
     }
 }

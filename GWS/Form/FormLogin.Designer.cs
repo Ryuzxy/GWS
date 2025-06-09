@@ -19,53 +19,100 @@
 
         private void InitializeComponent()
         {
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnDaftar = new System.Windows.Forms.Button(); // Tombol daftar
-            this.SuspendLayout();
-
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
+            btnDaftar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            SuspendLayout();
+            // 
             // txtUsername
-            this.txtUsername.Location = new System.Drawing.Point(30, 30);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(200, 23);
-            this.txtUsername.PlaceholderText = "Username";
-
+            // 
+            txtUsername.BackColor = SystemColors.InactiveBorder;
+            txtUsername.Location = new Point(77, 155);
+            txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "Username";
+            txtUsername.Size = new Size(200, 31);
+            txtUsername.TabIndex = 5;
+            // 
             // txtPassword
-            this.txtPassword.Location = new System.Drawing.Point(30, 70);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(200, 23);
-            this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.PasswordChar = '*';
-
+            // 
+            txtPassword.BackColor = SystemColors.InactiveBorder;
+            txtPassword.Location = new Point(77, 192);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.PlaceholderText = "Password";
+            txtPassword.Size = new Size(200, 31);
+            txtPassword.TabIndex = 4;
+            // 
             // btnLogin
-            this.btnLogin.Location = new System.Drawing.Point(30, 110);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(200, 30);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-
-            // btnDaftar (Tombol untuk membuka FormDaftar)
-            this.btnDaftar.Location = new System.Drawing.Point(30, 150);
-            this.btnDaftar.Name = "btnDaftar";
-            this.btnDaftar.Size = new System.Drawing.Size(200, 30);
-            this.btnDaftar.TabIndex = 3;
-            this.btnDaftar.Text = "Daftar";
-            this.btnDaftar.UseVisualStyleBackColor = true;
-            this.btnDaftar.Click += new System.EventHandler(this.btnDaftar_Click); // Aksi saat tombol diklik
-
+            // 
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.Location = new Point(77, 238);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(200, 43);
+            btnLogin.TabIndex = 2;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // btnDaftar
+            // 
+            btnDaftar.BackColor = SystemColors.ButtonHighlight;
+            btnDaftar.Location = new Point(77, 287);
+            btnDaftar.Name = "btnDaftar";
+            btnDaftar.Size = new Size(200, 45);
+            btnDaftar.TabIndex = 3;
+            btnDaftar.Text = "Daftar";
+            btnDaftar.UseVisualStyleBackColor = false;
+            btnDaftar.Click += btnDaftar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(300, 176);
+            label1.Name = "label1";
+            label1.Size = new Size(429, 48);
+            label1.TabIndex = 6;
+            label1.Text = "Selamat Datang Dokter ";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.DarkBlue;
+            label2.Location = new Point(300, 243);
+            label2.Name = "label2";
+            label2.Size = new Size(336, 38);
+            label2.TabIndex = 7;
+            label2.Text = "Silahkan Login Dahulu";
+            label2.Click += label2_Click;
+            // 
             // FormLogin
-            this.ClientSize = new System.Drawing.Size(284, 191);
-            this.Controls.Add(this.btnDaftar); // Menambahkan tombol daftar
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Name = "FormLogin";
-            this.Text = "Login";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(726, 484);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnDaftar);
+            Controls.Add(btnLogin);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Name = "FormLogin";
+            Text = "Login Dokter";
+            Load += FormLogin_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
+        private Label label1;
+        private Label label2;
     }
 }

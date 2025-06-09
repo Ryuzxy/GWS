@@ -11,7 +11,8 @@ namespace GWS.Models
         public int Id { get; set; }
         public string Hari { get; set; }
         public string Jam { get; set; }
-        public string Dokter { get; set; }
+        public int DokterId { get; set; }
+        public string Dokter { get; set; } // akan ditampilkan di dgv
     }
-}
 
+}

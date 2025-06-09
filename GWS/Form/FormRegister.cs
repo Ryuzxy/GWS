@@ -21,8 +21,9 @@ namespace Register
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
             string konfirmasi = txtKonfirmasiPassword.Text.Trim();
+            string kode = txtKonfirmasiPassword.Text.Trim();
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(kode))
             {
                 MessageBox.Show("Username dan Password harus diisi!");
                 return;
@@ -58,6 +59,7 @@ namespace Register
                     {
                         cmd.Parameters.AddWithValue("username", username);
                         cmd.Parameters.AddWithValue("password", hashedPassword);
+                        cmd.Parameters.AddWithValue("idi", kode);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -84,6 +86,31 @@ namespace Register
                 }
                 return builder.ToString();
             }
+        }
+
+        private void lblKonfirmasi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormDaftar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

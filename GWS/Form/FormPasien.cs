@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using GWS.Repositories;
 using System.Collections.Generic;
 using GWS.Models;
+using GWS.Forms;
+
 
 
 namespace PasienFOrm
@@ -16,13 +18,22 @@ namespace PasienFOrm
 
         private void FormPasien_Load(object sender, EventArgs e)
         {
-   
+
+            dgvJadwal.Rows.Clear();
+
             var jadwalRepository = new JadwalReposit();
             List<Jadwal> jadwals = jadwalRepository.GetAll();
+
             foreach (var jadwal in jadwals)
             {
                 dgvJadwal.Rows.Add(jadwal.Hari, jadwal.Jam, jadwal.Dokter);
             }
+
+      
+            var dokterRepo = new DokterRepository();
+            List<Dokter> dokters = dokterRepo.GetAll();
+            foreach (var dokter in dokters)
+                dgvDokter.Rows.Add(dokter.Id, dokter.Nama, dokter.Spesialis);
 
 
 
@@ -51,12 +62,19 @@ namespace PasienFOrm
         {
             if (listPeriksa.SelectedItem != null)
             {
-                MessageBox.Show($"Anda telah mendaftar untuk: {listPeriksa.SelectedItem}");
+                string layanan = listPeriksa.SelectedItem.ToString(); // ambil string layanan dari listPeriksa
+                var form = new FormPendaftaran(layanan);  // kirim layanan ke constructor
+                form.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Silakan pilih layanan untuk daftar.");
+                MessageBox.Show("Silakan pilih layanan untuk melihat deskripsi.");
             }
+        }
+
+        private void dgvJadwal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

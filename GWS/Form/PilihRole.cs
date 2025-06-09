@@ -26,5 +26,10 @@ namespace RolePilih
             formLogin.Show();
             this.Hide(); // opsional
         }
+
+        private void FormRoleSelector_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

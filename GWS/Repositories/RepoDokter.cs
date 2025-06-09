@@ -18,16 +18,14 @@ namespace GWS.Repositories
             {
                 list.Add(new Dokter
                 {
-                    Id = Convert.ToInt32(reader["id"]),
+                    Id = Convert.ToInt32(reader["id"]),  // <--- ubah di sini
                     Nama = reader["nama"].ToString(),
-                    Spesialis = reader["spesialis"].ToString(),
-                    Username = reader["username"].ToString(),
-                    Password = reader["password"].ToString(),
-                    Role = reader["role"].ToString()
+                    Spesialis = reader["spesialis"].ToString()
                 });
             }
             return list;
         }
+
 
         public void Insert(Dokter dokter)
         {

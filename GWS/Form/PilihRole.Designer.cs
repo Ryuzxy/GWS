@@ -28,58 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.btnPasien = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRoleSelector));
+            labelTitle = new Label();
+            btnPasien = new Button();
+            btnAdmin = new Button();
+            SuspendLayout();
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.Location = new System.Drawing.Point(90, 30);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(152, 32);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Pilih Role:";
+            labelTitle.AutoSize = true;
+            labelTitle.BackColor = Color.Transparent;
+            labelTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            labelTitle.Location = new Point(133, 151);
+            labelTitle.Margin = new Padding(4, 0, 4, 0);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(188, 48);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "Pilih Role:";
             // 
             // btnPasien
             // 
-            this.btnPasien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPasien.Location = new System.Drawing.Point(50, 100);
-            this.btnPasien.Name = "btnPasien";
-            this.btnPasien.Size = new System.Drawing.Size(100, 40);
-            this.btnPasien.TabIndex = 1;
-            this.btnPasien.Text = "Pasien";
-            this.btnPasien.UseVisualStyleBackColor = true;
-            this.btnPasien.Click += new System.EventHandler(this.btnPasien_Click);
+            btnPasien.BackColor = Color.Transparent;
+            btnPasien.Font = new Font("Segoe UI", 12F);
+            btnPasien.Location = new Point(151, 252);
+            btnPasien.Margin = new Padding(4, 5, 4, 5);
+            btnPasien.Name = "btnPasien";
+            btnPasien.Size = new Size(143, 67);
+            btnPasien.TabIndex = 1;
+            btnPasien.Text = "Pasien";
+            btnPasien.UseVisualStyleBackColor = false;
+            btnPasien.Click += btnPasien_Click;
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdmin.Location = new System.Drawing.Point(200, 100);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(100, 40);
-            this.btnAdmin.TabIndex = 2;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            btnAdmin.Font = new Font("Segoe UI", 12F);
+            btnAdmin.Location = new Point(151, 352);
+            btnAdmin.Margin = new Padding(4, 5, 4, 5);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(143, 67);
+            btnAdmin.TabIndex = 2;
+            btnAdmin.Text = "Admin";
+            btnAdmin.UseVisualStyleBackColor = true;
+            btnAdmin.Click += btnAdmin_Click;
             // 
             // FormRoleSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 180);
-            this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.btnPasien);
-            this.Controls.Add(this.labelTitle);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.Name = "FormRoleSelector";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Role Selector";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(447, 673);
+            Controls.Add(btnAdmin);
+            Controls.Add(btnPasien);
+            Controls.Add(labelTitle);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
+            Name = "FormRoleSelector";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Role Selector";
+            Load += FormRoleSelector_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

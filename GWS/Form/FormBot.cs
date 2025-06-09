@@ -30,5 +30,10 @@ namespace BotChat
             txtChat.AppendText($"Bot: {botResponse}\n\n");
             txtInput.Clear();
         }
+
+        private void txtChat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

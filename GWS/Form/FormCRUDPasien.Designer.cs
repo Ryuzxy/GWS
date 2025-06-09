@@ -29,6 +29,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPasiens));
             dataGridView1 = new DataGridView();
             txtNama = new TextBox();
             dtpTanggalLahir = new DateTimePicker();
@@ -48,8 +49,9 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
             dataGridView1.ColumnHeadersHeight = 34;
-            dataGridView1.Location = new Point(43, 417);
+            dataGridView1.Location = new Point(13, 468);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
@@ -59,6 +61,8 @@
             // 
             // txtNama
             // 
+            txtNama.BackColor = SystemColors.InactiveCaption;
+            txtNama.ForeColor = SystemColors.InactiveCaptionText;
             txtNama.Location = new Point(214, 28);
             txtNama.Margin = new Padding(4, 5, 4, 5);
             txtNama.Name = "txtNama";
@@ -67,6 +71,10 @@
             // 
             // dtpTanggalLahir
             // 
+            dtpTanggalLahir.CalendarForeColor = SystemColors.ActiveCaption;
+            dtpTanggalLahir.CalendarMonthBackground = SystemColors.ActiveCaption;
+            dtpTanggalLahir.CalendarTitleForeColor = SystemColors.ActiveCaption;
+            dtpTanggalLahir.CalendarTrailingForeColor = SystemColors.ActiveCaption;
             dtpTanggalLahir.Location = new Point(214, 87);
             dtpTanggalLahir.Margin = new Padding(4, 5, 4, 5);
             dtpTanggalLahir.Name = "dtpTanggalLahir";
@@ -75,6 +83,7 @@
             // 
             // txtAlamat
             // 
+            txtAlamat.BackColor = SystemColors.InactiveCaption;
             txtAlamat.Location = new Point(214, 145);
             txtAlamat.Margin = new Padding(4, 5, 4, 5);
             txtAlamat.Name = "txtAlamat";
@@ -83,6 +92,8 @@
             // 
             // cmbJenisKelamin
             // 
+            cmbJenisKelamin.BackColor = SystemColors.InactiveCaption;
+            cmbJenisKelamin.ForeColor = SystemColors.WindowText;
             cmbJenisKelamin.Items.AddRange(new object[] { "Laki-laki", "Perempuan" });
             cmbJenisKelamin.Location = new Point(214, 203);
             cmbJenisKelamin.Margin = new Padding(4, 5, 4, 5);
@@ -92,6 +103,7 @@
             // 
             // txtTelepon
             // 
+            txtTelepon.BackColor = SystemColors.InactiveCaption;
             txtTelepon.Location = new Point(214, 262);
             txtTelepon.Margin = new Padding(4, 5, 4, 5);
             txtTelepon.Name = "txtTelepon";
@@ -100,37 +112,45 @@
             // 
             // btnTambah
             // 
+            btnTambah.BackColor = SystemColors.ActiveCaption;
             btnTambah.Location = new Point(43, 333);
             btnTambah.Margin = new Padding(4, 5, 4, 5);
             btnTambah.Name = "btnTambah";
             btnTambah.Size = new Size(143, 50);
             btnTambah.TabIndex = 6;
             btnTambah.Text = "Tambah";
+            btnTambah.UseVisualStyleBackColor = false;
             btnTambah.Click += btnTambah_Click;
             // 
             // btnUbah
             // 
+            btnUbah.BackColor = SystemColors.ActiveCaption;
             btnUbah.Location = new Point(200, 333);
             btnUbah.Margin = new Padding(4, 5, 4, 5);
             btnUbah.Name = "btnUbah";
             btnUbah.Size = new Size(143, 50);
             btnUbah.TabIndex = 7;
             btnUbah.Text = "Ubah";
+            btnUbah.UseVisualStyleBackColor = false;
             btnUbah.Click += btnUbah_Click;
             // 
             // btnHapus
             // 
+            btnHapus.BackColor = SystemColors.ActiveCaption;
+            btnHapus.ForeColor = Color.Black;
             btnHapus.Location = new Point(357, 333);
             btnHapus.Margin = new Padding(4, 5, 4, 5);
             btnHapus.Name = "btnHapus";
             btnHapus.Size = new Size(143, 50);
             btnHapus.TabIndex = 8;
             btnHapus.Text = "Hapus";
+            btnHapus.UseVisualStyleBackColor = false;
             btnHapus.Click += btnHapus_Click;
             // 
             // labelNama
             // 
             labelNama.AutoSize = true;
+            labelNama.BackColor = Color.Transparent;
             labelNama.Location = new Point(43, 33);
             labelNama.Margin = new Padding(4, 0, 4, 0);
             labelNama.Name = "labelNama";
@@ -141,6 +161,7 @@
             // labelTanggalLahir
             // 
             labelTanggalLahir.AutoSize = true;
+            labelTanggalLahir.BackColor = Color.Transparent;
             labelTanggalLahir.Location = new Point(43, 92);
             labelTanggalLahir.Margin = new Padding(4, 0, 4, 0);
             labelTanggalLahir.Name = "labelTanggalLahir";
@@ -151,6 +172,7 @@
             // labelAlamat
             // 
             labelAlamat.AutoSize = true;
+            labelAlamat.BackColor = Color.Transparent;
             labelAlamat.Location = new Point(43, 150);
             labelAlamat.Margin = new Padding(4, 0, 4, 0);
             labelAlamat.Name = "labelAlamat";
@@ -161,6 +183,7 @@
             // labelJenisKelamin
             // 
             labelJenisKelamin.AutoSize = true;
+            labelJenisKelamin.BackColor = Color.Transparent;
             labelJenisKelamin.Location = new Point(43, 208);
             labelJenisKelamin.Margin = new Padding(4, 0, 4, 0);
             labelJenisKelamin.Name = "labelJenisKelamin";
@@ -171,6 +194,7 @@
             // labelTelepon
             // 
             labelTelepon.AutoSize = true;
+            labelTelepon.BackColor = Color.Transparent;
             labelTelepon.Location = new Point(43, 267);
             labelTelepon.Margin = new Padding(4, 0, 4, 0);
             labelTelepon.Name = "labelTelepon";
@@ -182,7 +206,9 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(829, 800);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(738, 800);
             Controls.Add(dataGridView1);
             Controls.Add(txtNama);
             Controls.Add(dtpTanggalLahir);
