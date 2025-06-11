@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRoleSelector));
             labelTitle = new Label();
             btnPasien = new Button();
+            btnDokter = new Button();
             btnAdmin = new Button();
             SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             // 
             btnPasien.BackColor = Color.Transparent;
             btnPasien.Font = new Font("Segoe UI", 12F);
-            btnPasien.Location = new Point(151, 252);
+            btnPasien.ForeColor = SystemColors.Desktop;
+            btnPasien.Location = new Point(150, 220);
             btnPasien.Margin = new Padding(4, 5, 4, 5);
             btnPasien.Name = "btnPasien";
             btnPasien.Size = new Size(143, 67);
@@ -61,14 +63,30 @@
             // 
             // btnAdmin
             // 
+            btnDokter.BackColor = Color.Transparent;
+            btnDokter.Font = new Font("Segoe UI", 12F);
+            btnDokter.ForeColor = SystemColors.Desktop;
+            btnDokter.Location = new Point(150, 320);
+            btnDokter.Margin = new Padding(4, 5, 4, 5);
+            btnDokter.Name = "btnDokter";
+            btnDokter.Size = new Size(143, 67);
+            btnDokter.TabIndex = 2;
+            btnDokter.Text = "Dokter";
+            btnDokter.UseVisualStyleBackColor = false;
+            btnDokter.Click += btnDokter_Click;
+            // 
+            // button1
+            // 
+            btnAdmin.BackColor = Color.Transparent;
             btnAdmin.Font = new Font("Segoe UI", 12F);
-            btnAdmin.Location = new Point(151, 352);
+            btnAdmin.ForeColor = SystemColors.Desktop;
+            btnAdmin.Location = new Point(150, 418);
             btnAdmin.Margin = new Padding(4, 5, 4, 5);
             btnAdmin.Name = "btnAdmin";
             btnAdmin.Size = new Size(143, 67);
-            btnAdmin.TabIndex = 2;
+            btnAdmin.TabIndex = 3;
             btnAdmin.Text = "Admin";
-            btnAdmin.UseVisualStyleBackColor = true;
+            btnAdmin.UseVisualStyleBackColor = false;
             btnAdmin.Click += btnAdmin_Click;
             // 
             // FormRoleSelector
@@ -79,6 +97,7 @@
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(447, 673);
             Controls.Add(btnAdmin);
+            Controls.Add(btnDokter);
             Controls.Add(btnPasien);
             Controls.Add(labelTitle);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -96,6 +115,7 @@
 
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button btnPasien;
+        private System.Windows.Forms.Button btnDokter;
         private System.Windows.Forms.Button btnAdmin;
     }
 }

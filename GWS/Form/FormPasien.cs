@@ -52,7 +52,7 @@ namespace PasienFOrm
             if (!string.IsNullOrEmpty(input))
             {
                 txtChat.AppendText("Anda: " + input + Environment.NewLine);
-                // Dummy response dari bot
+
                 txtChat.AppendText("Bot: Terima kasih atas pertanyaannya 😊" + Environment.NewLine);
                 txtInput.Clear();
             }

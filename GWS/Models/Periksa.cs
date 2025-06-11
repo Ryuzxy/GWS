@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace GWS.Models
 {
-    public class Obat
+    public class Pemeriksaan
     {
         public int Id { get; set; }
-        public string Nama { get; set; }
-        public int Stok { get; set; }
-        public string Keterangan { get; set; }
+        public string NamaPemeriksaan { get; set; }
     }
 }
